@@ -16,6 +16,7 @@ app.use(express.static(__dirname))
 //we changed our express setup so we can use https
 //pass the key and cert to createServer on https
 const expressServer = https.createServer(app);
+const port = process.env.PORT || 8000;
 //create our socket.io server... it will listen to our express port
 const io = socketio(expressServer,{
     cors: {
@@ -26,7 +27,7 @@ const io = socketio(expressServer,{
         methods: ["GET", "POST"]
     }
 });
-expressServer.listen(8000);
+expressServer.listen( port );
 
 //offers will contain {}
 const offers = [
