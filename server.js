@@ -20,13 +20,13 @@ const expressServer = https.createServer(app);
 const io = socketio(expressServer,{
     cors: {
         origin: [
-            "https://localhost",
+            "https://0.0.0.0",
             'https://xxx' //if using a phone or another computer
         ],
         methods: ["GET", "POST"]
     }
 });
-expressServer.listen(8181);
+expressServer.listen(8000);
 
 //offers will contain {}
 const offers = [
