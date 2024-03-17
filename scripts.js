@@ -2,7 +2,7 @@ const userName = "caller-"+Math.floor(Math.random() * 100000)
 const password = "x";
 document.querySelector('#user-name').innerHTML = userName;
 
-const port = process.env.PORT || 8000;
+const port = 8000;
 //if trying it on a phone, use this instead...
 // const socket = io.connect('https://xxx:8181/',{
 const socket = io.connect('https://0.0.0.0:'+port,{
